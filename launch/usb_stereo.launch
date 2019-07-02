@@ -1,0 +1,17 @@
+<!-- 
+    lpetrich 21/06/19
+    launches two usb cameras with prefix /cam1 and /cam2 
+-->
+
+<launch>
+    <node pkg="usb_cam" type="usb_cam_node" name="cam1" output="screen" respawn="true" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="framerate" value="15" />
+        <param name="autofocus" value="true" />
+    </node>
+    <node pkg="usb_cam" type="usb_cam_node" name="cam2" output="screen" respawn="true" >
+        <param name="video_device" value="/dev/video1" />
+        <param name="framerate" value="15" />
+        <param name="autofocus" value="true" />
+    </node>
+</launch>
